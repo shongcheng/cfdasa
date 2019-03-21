@@ -1,0 +1,32 @@
+# Default values for weatherapp.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: shongcheng/weather
+  tag: v2
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 3000
+
+deployment:
+  containerPort: 3000
+
+APP_ID: 3af4185f06b6f8d839b72273c3d006f4
+
+productionEnv: true
+
+productionReplicaCount: 2
+
+gatewayhostname: jp.157.230.73.83.nip.io
+gatewayport: 80
+
+APP_DEFAULT_CITY: Japan
